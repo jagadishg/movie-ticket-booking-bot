@@ -7,7 +7,14 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url);
 });
 
-var connector = new builder.ChatConnector();
+var appId = "3949143f-3ab1-4113-ab74-1d0e6da13f18";
+var appPassword = "K(qBzo:7_){WN:eA";
+
+var connector = new builder.ChatConnector({
+    appId: appId,
+    appPassword: appPassword
+});
+
 server.post('/api/messages', connector.listen());
 
 var bot = new builder.UniversalBot(connector);
