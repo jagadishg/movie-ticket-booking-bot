@@ -7,8 +7,8 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url);
 });
 
-var appId = "3949143f-3ab1-4113-ab74-1d0e6da13f18";
-var appPassword = "K(qBzo:7_){WN:eA";
+var appId = "<MICROSOFT_APP_ID>";
+var appPassword = "<MICROSOFT_APP_PASSWORD>";
 
 var connector = new builder.ChatConnector({
     appId: appId,
@@ -19,8 +19,8 @@ server.post('/api/messages', connector.listen());
 
 var bot = new builder.UniversalBot(connector);
 
-var luisAppId = "c61e07d5-0e0e-4e35-8c1e-3447eeb1a969";
-var luisAPIKey = "abe3c21285c14cebbc4fa4701b79e581";
+var luisAppId = "<LUIS_APP_ID>";
+var luisAPIKey = "<LUIS_API_KEY>";
 var luisAPIHostName = "westus.api.cognitive.microsoft.com";
 
 const luisModelUrl = 'https://' + luisAPIHostName + '/luis/v2.0/apps/' + luisAppId + '?subscription-key=' + luisAPIKey;
