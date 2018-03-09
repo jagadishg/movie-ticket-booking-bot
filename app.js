@@ -19,6 +19,9 @@ server.post('/api/messages', connector.listen());
 
 var bot = new builder.UniversalBot(connector);
 
+var inMemoryStorage = new builder.MemoryBotStorage();
+bot.set('storage', inMemoryStorage);
+
 var luisAppId = "<LUIS_APP_ID>";
 var luisAPIKey = "<LUIS_API_KEY>";
 var luisAPIHostName = "westus.api.cognitive.microsoft.com";
